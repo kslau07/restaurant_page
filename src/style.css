@@ -1,0 +1,54 @@
+body {
+    background: url("./tacos_splash.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin-top: 1rem;
+}
+header {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    font-size: 0; /* Removes spacing between buttons in child element */
+}
+
+nav > button {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    color: white;
+    background-color: hsla(120, 100%, 25%, 0.75);
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    padding-block: 0.55rem;
+    width: 17rem;
+}
+#nav-button-one {
+    border-block: 2px solid orange;
+    border-left: 2px solid orange;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+#nav-button-two {
+    border-block: 2px solid orange;
+}
+#nav-button-three {
+    border-block: 2px solid orange;
+    border-right: 2px solid orange;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+nav > button:hover {
+    /* background-image: linear-gradient(rgb(0 0 0/23%); */
+    /* background-color: hsla(120, 100%, 25%, 0.75); */
+    /* text-decoration: underline; */
+    background-image: linear-gradient(rgb(0 255 255/40%) 0 0);
+}
+
+.hello {
+    color: red;
+}

@@ -1,1 +1,6 @@
-console.log("i am index.js!");
+import "./reset.css";
+import "./style.css";
+import { populateHome } from "./home.js";
+
+const content = document.getElementById("content");
+content.appendChild(populateHome());
