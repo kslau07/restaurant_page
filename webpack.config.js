@@ -30,7 +30,7 @@ module.exports = {
       template: "./src/template.html",
       filename: "index.html",
       head: "inject",
-      scriptLoading: "defer",
+      Scriptloading: "defer",
     }),
   ],
   // optimization: {
