@@ -1,67 +1,70 @@
 body {
-    background: url("./tacos_splash.jpg") no-repeat center center fixed;
-    background-size: cover;
+  background: url("./tacos_splash.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 header {
-    margin-top: 1rem;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+  margin-top: 1rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
-    font-size: 0; /* Removes spacing between buttons in child element */
+  font-size: 0; /* Removes spacing between buttons in child element */
 }
 
 nav > button {
-    font-size: 1.4rem;
-    font-weight: bold;
-    letter-spacing: 0.75px;
-    color: white;
-    background-color: hsla(175, 100%, 19%, 0.75);
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    padding-block: 0.55rem;
-    width: 17rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.75px;
+  color: white;
+  background-color: hsl(175, 100%, 19%);
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  padding-block: 0.55rem;
+  width: 17rem;
+
+  opacity: 80%;
+  transition:
+    opacity 250ms,
+    scale 200ms;
 }
 #nav-button-one {
-    border-block: 2px solid orange;
-    border-left: 2px solid orange;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+  border-block: 2px solid orange;
+  border-left: 2px solid orange;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
 }
 #nav-button-two {
-    border-block: 2px solid orange;
+  border-block: 2px solid orange;
 }
 #nav-button-three {
-    border-block: 2px solid orange;
-    border-right: 2px solid orange;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+  border-block: 2px solid orange;
+  border-right: 2px solid orange;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 nav > button:hover {
-    background-image: linear-gradient(rgb(0 255 255/40%) 0 0);
+  opacity: 100%;
+  transform: translate(0, -2px);
 }
 
 #content {
-    /* outline: 2px solid red; */
-    /* margin-top: calc(100% / 9); */
-    /* background-image: linear-gradient(hsla(0, 0%, 0%, 0.5) 0 0); */
-    /* height: 100vh; */
+  background-color: red;
 }
 
 #main {
-    height: 15rem;
-    margin-top: calc(100vh / 4);
-    background-color: cyan;
+  height: 15rem;
+  margin-top: calc(100vh / 4);
+  background-color: cyan;
 }
 
 #footer {
-    height: 15rem;
-    margin-top: calc(100vh / 4);
-    background-color: green;
+  height: 15rem;
+  margin-top: calc(100vh / 4);
+  background-color: green;
 }
