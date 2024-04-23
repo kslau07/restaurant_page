@@ -1,0 +1,38 @@
+.rotating-text p {
+  display: inline-flex;
+  margin: 0px;
+  vertical-align: top;
+}
+
+/*Stacks each .word on top of each other with position:absolute (removes from document flow)*/
+.rotating-text p .word {
+  position: absolute;
+  display: flex;
+  opacity: 0;
+}
+
+.rotating-text p .word .letter {
+  transform-origin: center center 25px; /* x is center, y is center, 25px is ?? seems to be y-axis*/
+}
+
+.rotating-text .word .letter.out {
+  /* 3D-effect comes from rotating x-axis, think shish kebab rotation */
+  transform: rotateX(90deg);
+
+  /*transition controls the timing & motion of the next transform effect*/
+  transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+}
+
+/*
+  There are 2 timing factors in play:
+  The first is the waterfall effect, that is, each letter is changed from left to right with a slight delay.
+  The second is the x-axis rotation of each letter from -90deg to 0deg
+ */
+.rotating-text .word .letter.in {
+  /* Seems to affect timing & motion of the incoming letter */
+  transition: 1s ease;
+}
+
+.rotating-text p .word .letter.behind {
+  transform: rotateX(-90deg);
+}

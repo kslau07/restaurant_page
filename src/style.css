@@ -8,8 +8,8 @@
   src: url("./Pacifico-Regular.woff") format("woff");
 }
 @font-face {
-  font-family: "Sriracha-Regular";
-  src: url("./Sriracha-Regular.woff") format("woff");
+  font-family: "FjallaOne-Regular";
+  src: url("./FjallaOne-Regular.woff") format("woff");
 }
 
 html,
@@ -21,7 +21,7 @@ body {
   background: url("./tacos_splash.jpg") no-repeat center center fixed;
   background-size: cover;
   display: grid;
-  grid-template-rows: minmax(10rem, 1fr) 4fr;
+  grid-template-rows: minmax(12rem, 1fr) 4fr;
   --highlight-color-01: hsl(327, 85%, 65%);
 }
 
@@ -131,39 +131,24 @@ svg {
 }
 
 #main {
-  animation-name: slide-in;
-  animation-duration: 600ms;
-  animation-delay: 750ms;
-  animation-direction: normal;
-  animation-fill-mode: both;
-  animation-iteration-count: 1;
-
   display: grid;
   height: 100%;
   grid-template-rows:
     [banner-start] minmax(200px, 2fr) [banner-end] minmax(200px, 1fr)
     [footer-start] 1fr [footer-end];
 }
-@keyframes slide-in {
-  from {
-    transform: translate(100px, 0px);
-  }
-  to {
-    transform: translate(0px, 0px);
-  }
-}
 
 #banner {
   grid-row-start: banner-start;
   grid-row-end: banner-end;
-  /* background-color: hsla(333, 72%, 42%, 0.85); */
-  background-color: hsla(15, 99%, 85%, 0.88);
+  /* background-color: hsla(15, 99%, 85%, 0.88); */
+  background-color: hsla(15, 99%, 15%, 0.88);
 
   border-block: 4px solid var(--highlight-color-01);
-  outline: 8px solid maroon;
-  color:;
-  font-size: 3rem;
-  font-family: "Sriracha-Regular";
+  outline: 8px solid hsla(15, 99%, 15%, 0.88);
+  color: var(--highlight-color-01);
+  font-size: 4rem;
+  font-family: "FjallaOne-Regular";
 
   display: grid;
   place-content: center;
