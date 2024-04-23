@@ -7,6 +7,10 @@
   font-family: "Pacifico-Regular";
   src: url("./Pacifico-Regular.woff") format("woff");
 }
+@font-face {
+  font-family: "Sriracha-Regular";
+  src: url("./Sriracha-Regular.woff") format("woff");
+}
 
 html,
 body {
@@ -16,7 +20,9 @@ body {
 body {
   background: url("./tacos_splash.jpg") no-repeat center center fixed;
   background-size: cover;
-  --header-height: 7rem;
+  display: grid;
+  grid-template-rows: minmax(10rem, 1fr) 4fr;
+  --highlight-color-01: hsl(327, 85%, 65%);
 }
 
 header {
@@ -28,26 +34,49 @@ header {
 }
 
 #logo-container {
-  height: var(--header-height);
   display: grid;
   grid-auto-flow: column;
   justify-content: start;
-  /* align-items: center; */
   padding-left: 2rem;
   gap: 1rem;
-  /* background-color: ; */
   height: min-content;
   position: relative;
 }
 
 #logo-container {
-  color: hotpink;
+  color: var(--highlight-color-01);
   font-size: 3.1rem;
-  /* font-weight: bold; */
   font-style: italic;
   font-family: "Pacifico-Regular";
   display: grid;
   grid-template-rows: 14px 14px 7px;
+  text-decoration: none;
+  animation-name: tilt-shaking;
+  animation-duration: 125ms;
+  animation-iteration-count: 5;
+  transition: transform 225ms;
+}
+
+#logo-container:hover {
+  transform: scale(1.09) rotate(3deg);
+}
+
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 #name-taco,
@@ -62,7 +91,6 @@ header {
 }
 
 #logo-image {
-  /* background: url("./taco-svgrepo-com.svg") no-repeat center center fixed; */
   width: 141px;
   position: relative;
   top: -50px;
@@ -74,7 +102,6 @@ nav {
   display: grid;
   grid-auto-flow: column;
   justify-content: start;
-  /* align-items: center; */
   gap: 3rem;
   padding-top: 0.25rem;
 }
@@ -83,18 +110,79 @@ button {
   cursor: pointer;
   height: min-content;
   border: none;
-  background: hotpink;
+  background: var(--highlight-color-01);
   padding-inline: 1.5rem;
   color: white;
   font-size: 2.4rem;
   font-weight: bold;
-  /* font-style: italic; */
   font-family: "Oswald-Bold";
   transform: skew(0deg, -5deg);
-
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.4);
+
+  transition: transform 250ms;
+}
+button:hover {
+  transform: translate(0px, 7px) skew(0deg, -5deg) scale(1.05);
+  text-decoration: underline;
 }
 
 svg {
-  filter: drop-shadow(12px 12px 3px rgba(0, 0, 255, 0.55));
+  filter: drop-shadow(12px 12px 1px rgba(0, 0, 255, 0.4));
+}
+
+#main {
+  animation-name: slide-in;
+  animation-duration: 600ms;
+  animation-delay: 750ms;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+
+  display: grid;
+  height: 100%;
+  grid-template-rows:
+    [banner-start] minmax(200px, 2fr) [banner-end] minmax(200px, 1fr)
+    [footer-start] 1fr [footer-end];
+}
+@keyframes slide-in {
+  from {
+    transform: translate(100px, 0px);
+  }
+  to {
+    transform: translate(0px, 0px);
+  }
+}
+
+#banner {
+  grid-row-start: banner-start;
+  grid-row-end: banner-end;
+  /* background-color: hsla(333, 72%, 42%, 0.85); */
+  background-color: hsla(15, 99%, 85%, 0.88);
+
+  border-block: 4px solid var(--highlight-color-01);
+  outline: 8px solid maroon;
+  color:;
+  font-size: 3rem;
+  font-family: "Sriracha-Regular";
+
+  display: grid;
+  place-content: center;
+}
+#footer {
+  grid-row-start: footer-start;
+  grid-row-end: footer-end;
+  background-color: hsla(311, 71%, 10%, 0.96);
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: [address-start] 1fr [address-end] min-content [hours-start] 1fr [hours-end];
+  color: white;
+}
+#address {
+}
+#dotted-line {
+  border-left: 3px dotted purple;
+  width: 1px;
+}
+#hours {
 }
