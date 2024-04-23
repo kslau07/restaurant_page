@@ -1,70 +1,100 @@
+@font-face {
+  font-family: "Oswald-Bold";
+  src: url("./Oswald-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pacifico-Regular";
+  src: url("./Pacifico-Regular.woff") format("woff");
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
 body {
   background: url("./tacos_splash.jpg") no-repeat center center fixed;
   background-size: cover;
+  --header-height: 7rem;
 }
 
 header {
-  margin-top: 1rem;
   display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   justify-content: center;
-  align-items: center;
+  gap: 5rem;
+}
+
+#logo-container {
+  height: var(--header-height);
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  /* align-items: center; */
+  padding-left: 2rem;
+  gap: 1rem;
+  /* background-color: ; */
+  height: min-content;
+  position: relative;
+}
+
+#logo-container {
+  color: hotpink;
+  font-size: 3.1rem;
+  /* font-weight: bold; */
+  font-style: italic;
+  font-family: "Pacifico-Regular";
+  display: grid;
+  grid-template-rows: 14px 14px 7px;
+}
+
+#name-taco,
+#name-loco {
+  display: inline-block;
+  transform: rotate(-15deg);
+  text-shadow: 4px 4px white;
+  z-index: 1;
+}
+#name-taco {
+  z-index: 2;
+}
+
+#logo-image {
+  /* background: url("./taco-svgrepo-com.svg") no-repeat center center fixed; */
+  width: 141px;
+  position: relative;
+  top: -50px;
+  left: -27px;
+  transform: rotate(-15deg) translate(-3px, -20px);
 }
 
 nav {
-  font-size: 0; /* Removes spacing between buttons in child element */
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  /* align-items: center; */
+  gap: 3rem;
+  padding-top: 0.25rem;
 }
 
-nav > button {
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 0.75px;
-  color: white;
-  background-color: hsl(175, 100%, 19%);
-  background-repeat: no-repeat;
-  border: none;
+button {
   cursor: pointer;
-  overflow: hidden;
-  padding-block: 0.55rem;
-  width: 17rem;
+  height: min-content;
+  border: none;
+  background: hotpink;
+  padding-inline: 1.5rem;
+  color: white;
+  font-size: 2.4rem;
+  font-weight: bold;
+  /* font-style: italic; */
+  font-family: "Oswald-Bold";
+  transform: skew(0deg, -5deg);
 
-  opacity: 80%;
-  transition:
-    opacity 250ms,
-    scale 200ms;
-}
-#nav-button-one {
-  border-block: 2px solid orange;
-  border-left: 2px solid orange;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-}
-#nav-button-two {
-  border-block: 2px solid orange;
-}
-#nav-button-three {
-  border-block: 2px solid orange;
-  border-right: 2px solid orange;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.4);
 }
 
-nav > button:hover {
-  opacity: 100%;
-  transform: translate(0, -2px);
-}
-
-#content {
-  background-color: red;
-}
-
-#main {
-  height: 15rem;
-  margin-top: calc(100vh / 4);
-  background-color: cyan;
-}
-
-#footer {
-  height: 15rem;
-  margin-top: calc(100vh / 4);
-  background-color: green;
+svg {
+  filter: drop-shadow(12px 12px 3px rgba(0, 0, 255, 0.55));
 }
