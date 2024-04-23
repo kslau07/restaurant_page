@@ -1,3 +1,18 @@
+.rotating-text {
+  align-self: end;
+  justify-self: center;
+  /* margin-left: 1rem; */
+  display: grid;
+  grid-template-areas:
+    "phrase"
+    "adjective";
+  grid-template-rows: 200px 200px;
+  /* grid-template-rows: 300px; */
+  /* grid-template-columns: 1fr 1fr; */
+}
+.phrase {
+  align-self: end;
+}
 .rotating-text p {
   display: inline-flex;
   margin: 0px;

@@ -151,12 +151,31 @@ svg {
   font-family: "FjallaOne-Regular";
 
   display: grid;
-  place-content: center;
+  grid-template-columns: repeat(2, 1fr);
 }
+
+.taco-image-cropper {
+  width: 33vh;
+  height: 33vh;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  /* align-self: center; */
+  place-self: center;
+}
+.taco-image {
+  display: inline;
+  margin: 0 auto;
+  /* height: 100%; */
+  width: auto;
+}
+
 #footer {
   grid-row-start: footer-start;
   grid-row-end: footer-end;
   background-color: hsla(311, 71%, 10%, 0.96);
+  border-top: 4px solid var(--highlight-color-01);
+  outline: 8px solid hsla(311, 71%, 10%, 0.96);
 
   display: grid;
   grid-auto-flow: column;
@@ -164,10 +183,29 @@ svg {
   color: white;
 }
 #address {
+  place-self: center;
+  font-size: 1.4rem;
+  font-family: "Oswald-Bold";
+  color: darkorange;
+}
+#address > p:first-child {
+  font-size: 1.9rem;
+  color: white;
 }
 #dotted-line {
-  border-left: 3px dotted purple;
+  border-left: 5px dotted maroon;
   width: 1px;
 }
 #hours {
+  place-self: center;
+  font-size: 1.1rem;
+  font-family: "Oswald-Bold";
+  color: Goldenrod;
+}
+#hours > p:first-child {
+  font-size: 1.9rem;
+  color: var(--highlight-color-01);
+}
+#hours > p:last-child {
+  color: white;
 }
