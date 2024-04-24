@@ -75,7 +75,6 @@ function openOrClosedMessage() {
   const nowDay = now.getDay();
   const nowHour = now.getHours();
   const nowMinutes = now.getMinutes();
-
   const days = {
     1: "Monday",
     2: "Tuesday",
@@ -96,10 +95,9 @@ function openOrClosedMessage() {
   const minsLeft = 60 - nowMinutes;
   const hourPlural = hoursLeft === 1 ? "hour" : "hours";
   const minutePlural = minsLeft === 1 ? "minute" : "minutes";
-
   let message = `It's ${thisDay} ${currTime} - `;
   if (nowHour >= 21) {
-    message += "We are closed";
+    message += "We are now closed.";
   } else {
     message += `Closing in ${hoursLeft} ${hourPlural} and ${minsLeft} ${minutePlural}.`;
   }
