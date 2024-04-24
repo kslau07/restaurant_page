@@ -64,7 +64,7 @@ const _addressDiv = () => {
   div.appendChild(line2);
 
   const line3 = document.createElement("p");
-  line3.innerHTML = `Anywhere, TX 987000`;
+  line3.innerHTML = `Anywhere, TX 78654`;
   div.appendChild(line3);
 
   return div;
@@ -129,6 +129,13 @@ const _hoursDiv = () => {
 };
 
 export function populateHome() {
+  const navButtonMenu = document.querySelector("#nav-button-menu");
+  navButtonMenu.classList.remove("tab-selected");
+  const navButtonContactUs = document.querySelector("#nav-button-contact-us");
+  navButtonContactUs.classList.remove("tab-selected");
+  const navButtonOurStory = document.querySelector("#nav-button-our-story");
+  navButtonOurStory.classList.remove("tab-selected");
+
   const contentDiv = document.querySelector("#content");
   contentDiv.innerHTML = "";
   const main = document.createElement("main");
