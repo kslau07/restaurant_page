@@ -28,30 +28,56 @@ export function populateContactUs() {
 
   const contactUsForm = document.createElement("div");
   contactUsForm.id = "contact-us-form";
-
   contactUsGrid.appendChild(contactUsForm);
 
-  const fieldNames = ["name", "phone"];
-  fieldNames.forEach((fieldName) => {
-    const label = document.createElement("label");
-    label.textContent = fieldName.charAt(0).toUpperCase() + fieldName.slice(1);
-    label.htmlFor = fieldName + "-input";
-    const input = document.createElement("input");
-    input.type = "text";
-    input.name = fieldName;
-    input.id = fieldName + "-input";
+  const h2 = document.createElement("h2");
+  h2.id = "contact-us-header";
+  h2.textContent = "Leave us a comment!";
+  contactUsForm.appendChild(h2);
 
-    contactUsForm.appendChild(label);
-    label.appendChild(input);
-  });
+  // Fields for name, email, and comment
 
-  const commentLabel = document.createElement("label");
-  commentLabel.textContent = "Comment";
-  commentLabel.htmlFor = "comment-textarea";
+  const nameFieldGroup = document.createElement("div");
+  nameFieldGroup.classList.add("contact-us-field-group");
+  const nameInput = document.createElement("input");
+  nameInput.placeholder = "name";
+  nameInput.classList.add("contact-us-input");
+  nameInput.type = "text";
+  nameFieldGroup.appendChild(nameInput);
+  const nameLabel = document.createElement("label");
+  nameLabel.classList.add("contact-us-label");
+  nameLabel.textContent = "Name";
+  nameFieldGroup.appendChild(nameLabel);
+  contactUsForm.appendChild(nameFieldGroup);
+
+  const emailFieldGroup = document.createElement("div");
+  emailFieldGroup.classList.add("contact-us-field-group");
+  const emailInput = document.createElement("input");
+  emailInput.classList.add("contact-us-input");
+  emailInput.placeholder = "email";
+  emailInput.type = "email";
+  emailFieldGroup.appendChild(emailInput);
+  const emailLabel = document.createElement("label");
+  emailLabel.classList.add("contact-us-label");
+  emailLabel.textContent = "Email";
+  emailFieldGroup.appendChild(emailLabel);
+  contactUsForm.appendChild(emailFieldGroup);
+
+  const commentFieldGroup = document.createElement("div");
+  commentFieldGroup.classList.add("contact-us-field-group");
   const commentInput = document.createElement("textarea");
   commentInput.rows = "4";
-  commentInput.cols = "50";
-  commentInput.id = "comment-textarea";
-  commentLabel.appendChild(commentInput);
-  contactUsForm.appendChild(commentLabel);
+  commentInput.classList.add("contact-us-input");
+  commentInput.placeholder = "comment";
+  commentFieldGroup.appendChild(commentInput);
+  const commentLabel = document.createElement("label");
+  commentLabel.classList.add("contact-us-label");
+  commentLabel.textContent = "Comment";
+  commentFieldGroup.appendChild(commentLabel);
+  contactUsForm.appendChild(commentFieldGroup);
+
+  const contactUsButton = document.createElement("button");
+  contactUsButton.id = "contact-us-button";
+  contactUsButton.textContent = "Submit";
+  contactUsForm.appendChild(contactUsButton);
 }

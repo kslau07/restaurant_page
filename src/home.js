@@ -138,12 +138,12 @@ export function populateHome() {
 
   const contentDiv = document.querySelector("#content");
   contentDiv.innerHTML = "";
-  const main = document.createElement("main");
-  main.id = "main";
+  const homeContainer = document.createElement("div");
+  homeContainer.id = "home-container";
 
   const bannerDiv = document.createElement("div");
   bannerDiv.id = "banner";
-  main.appendChild(bannerDiv);
+  homeContainer.appendChild(bannerDiv);
 
   const rotatingTextDiv = _rotatingTextDiv();
   bannerDiv.appendChild(rotatingTextDiv);
@@ -153,7 +153,7 @@ export function populateHome() {
 
   const footerDiv = document.createElement("div");
   footerDiv.id = "footer";
-  main.appendChild(footerDiv);
+  homeContainer.appendChild(footerDiv);
 
   const addressDiv = _addressDiv();
   footerDiv.appendChild(addressDiv);
@@ -165,6 +165,6 @@ export function populateHome() {
   const hoursDiv = _hoursDiv();
   footerDiv.appendChild(hoursDiv);
 
-  contentDiv.appendChild(main);
+  contentDiv.appendChild(homeContainer);
   rotatingText.rotateWords();
 }
